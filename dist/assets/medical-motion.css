@@ -1,0 +1,81 @@
+/* Quiet, page-wide medical line art. Decorative layers never capture clicks. */
+:root{--medical-art:url('/assets/medical-motion-overlay.png')}
+.hero:after,.intro:before,.journey-section:before,.support-section:before,.doctor-section:before,.stories-section:before,.specialties-section:before,.contact-section:after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background-image:var(--medical-art);background-repeat:no-repeat;background-size:min(74vw,900px) auto;background-position:84% 44%;opacity:.1;mix-blend-mode:screen;animation:medicalDrift 34s ease-in-out infinite alternate}
+.hero:after{opacity:.17;mix-blend-mode:screen;background-size:min(68vw,860px) auto;background-position:75% 40%}
+.intro,.journey-section,.support-section,.doctor-section,.stories-section,.specialties-section,.contact-section{position:relative;isolation:isolate;overflow:hidden}
+.intro:before,.support-section:before,.stories-section:before,.specialties-section:before{mix-blend-mode:multiply;opacity:.105}
+.journey-section:before,.doctor-section:before{opacity:.13}
+.contact-section:after{opacity:.13;mix-blend-mode:screen;background-position:89% 50%}
+.hero-grid,.hero-bottom,.intro>*:not(:before),.journey-section>*:not(:before):not(:after),.support-section>*:not(:before),.doctor-section>*:not(:before),.stories-section>*:not(:before),.specialties-section>*:not(:before),.contact-section>*:not(:before):not(:after){position:relative;z-index:1}
+.hero-bottom{position:absolute;z-index:1}
+.intro-stamp{z-index:1}
+.contact-section:before{z-index:0}
+.contact-orbit{z-index:1}
+.consultation-panel,.contact-content{z-index:2}
+@keyframes medicalDrift{0%{background-position:84% 43%;opacity:.075}100%{background-position:77% 57%;opacity:.15}}
+@media(max-width:760px){.hero:after,.intro:before,.journey-section:before,.support-section:before,.doctor-section:before,.stories-section:before,.specialties-section:before,.contact-section:after{background-size:125vw auto;background-position:78% 45%;opacity:.085}.hero:after{opacity:.13}}
+@media(prefers-reduced-motion:reduce){.hero:after,.intro:before,.journey-section:before,.support-section:before,.doctor-section:before,.stories-section:before,.specialties-section:before,.contact-section:after{animation:none;opacity:.09}}
+
+/* Clear, inviting consultation CTAs */
+.hero-actions .button-coral,.form-submit{position:relative;isolation:isolate;overflow:hidden;min-height:58px;border-radius:10px;background:linear-gradient(110deg,#f17b61 0%,#e65d4f 100%);box-shadow:0 10px 27px rgba(230,91,73,.3),inset 0 1px 0 rgba(255,255,255,.28);font-weight:700;letter-spacing:.005em;transition:transform .22s ease,box-shadow .22s ease,filter .22s ease}
+.hero-actions .button-coral:before,.form-submit:before{content:"";position:absolute;z-index:-1;top:-30%;bottom:-30%;left:-45%;width:34%;transform:skewX(-22deg);background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);transition:left .55s ease}
+.hero-actions .button-coral:hover,.form-submit:hover{transform:translateY(-3px);filter:saturate(1.08);box-shadow:0 15px 34px rgba(230,91,73,.4),inset 0 1px 0 rgba(255,255,255,.32)}
+.hero-actions .button-coral:hover:before,.form-submit:hover:before{left:125%}
+.hero-actions .button-coral:active,.form-submit:active{transform:translateY(-1px) scale(.99)}
+.hero-actions .button-coral span,.form-submit span{display:inline-grid;place-items:center;width:25px;height:25px;margin-left:14px;border:1px solid rgba(255,255,255,.36);border-radius:50%;background:rgba(255,255,255,.14);transition:transform .22s ease,background .22s ease}
+.hero-actions .button-coral:hover span,.form-submit:hover span{transform:translate(2px,-1px);background:rgba(255,255,255,.24)}
+.hero-actions .button-coral:focus-visible,.form-submit:focus-visible{outline:3px solid #fff;outline-offset:4px}
+@media(prefers-reduced-motion:reduce){.hero-actions .button-coral,.form-submit,.hero-actions .button-coral:before,.form-submit:before,.hero-actions .button-coral span,.form-submit span{transition:none}}
+
+/* Refined BHCS masthead */
+.site-header{height:100px;padding-inline:clamp(26px,6vw,100px);gap:28px;background:linear-gradient(105deg,rgba(226,237,240,.97),rgba(239,246,247,.96) 54%,rgba(224,236,239,.97));border-bottom:1px solid rgba(14,49,68,.12);box-shadow:0 8px 24px rgba(8,41,59,.055);backdrop-filter:blur(14px)}
+.brand{gap:17px;flex:0 0 auto}
+.brand-mark{width:116px;height:88px;background:transparent;border-radius:0;box-shadow:none;overflow:visible}
+.brand-mark img{width:128px;height:98px;object-fit:contain;mix-blend-mode:multiply}
+.brand-caption{max-width:190px;font-size:12px;line-height:1.5;color:#667f8e;letter-spacing:.015em}
+.brand-caption b{color:#16394d;font-weight:700}
+.primary-nav{gap:clamp(24px,3vw,48px);font-size:13px}
+.primary-nav>a:not(.nav-cta){position:relative;padding:12px 0;color:#456071;transition:color .2s ease}
+.primary-nav>a:not(.nav-cta):after{content:"";position:absolute;left:0;right:100%;bottom:4px;height:2px;border-radius:2px;background:#0b8f9b;transition:right .22s ease}
+.primary-nav>a:not(.nav-cta):hover{color:#087f87}
+.primary-nav>a:not(.nav-cta):hover:after{right:0}
+.nav-cta{display:inline-flex;align-items:center;gap:16px;padding:15px 19px 15px 22px;border-radius:10px;background:linear-gradient(110deg,#0b3045,#0c5260);box-shadow:0 8px 20px rgba(9,49,68,.16);transition:transform .22s ease,box-shadow .22s ease,background .22s ease}
+.nav-cta:hover{background:linear-gradient(110deg,#0a4355,#087f87);box-shadow:0 12px 26px rgba(8,78,91,.22);transform:translateY(-2px)}
+.nav-cta span{display:grid;place-items:center;width:25px;height:25px;margin:0;border:1px solid rgba(255,255,255,.28);border-radius:50%;font-size:15px;transition:transform .2s ease}
+.nav-cta:hover span{transform:translateY(2px)}
+@media(max-width:1000px){.site-header{height:92px;padding-inline:30px;gap:16px}.brand{gap:10px}.brand-mark{width:94px;height:76px}.brand-mark img{width:108px;height:84px}.brand-caption{font-size:10px;max-width:155px}.primary-nav{gap:20px;font-size:12px}.nav-cta{padding:13px 14px;gap:10px}}
+@media(max-width:760px){.site-header{height:76px;padding-inline:18px}.brand{gap:0}.brand-mark{width:82px;height:68px}.brand-mark img{width:96px;height:75px}.brand-caption{display:none}.menu-toggle{border-radius:9px}.primary-nav{top:75px}.nav-cta{padding:14px 16px}.nav-cta span{width:23px;height:23px}}
+@media(prefers-reduced-motion:reduce){.primary-nav>a:not(.nav-cta),.primary-nav>a:not(.nav-cta):after,.nav-cta,.nav-cta span{transition:none}}
+
+/* The logo is now a transparent brand mark, so keep it on a light footer field. */
+.site-footer{min-height:126px;background:linear-gradient(108deg,#dce9ed 0%,#eaf2f4 52%,#d9e7eb 100%);color:#102638;border-top:1px solid rgba(14,49,68,.12);grid-template-columns:148px 1fr 40px;gap:28px;padding:14px clamp(28px,6vw,92px)}
+.footer-brand{width:140px;height:104px;background:transparent;overflow:visible}
+.footer-brand img{width:148px;height:116px;object-fit:contain}
+.footer-copy>span{color:#385466}
+.footer-copy small{color:#667d89}
+.back-top{color:#16394d;border-color:rgba(16,56,76,.3);border-radius:8px;transition:background .2s,color .2s,transform .2s}
+.back-top:hover{background:#0b5260;color:white;transform:translateY(-2px)}
+@media(max-width:760px){.site-footer{min-height:102px;grid-template-columns:90px 1fr 32px;gap:12px;padding:10px 18px}.footer-brand{width:86px;height:72px}.footer-brand img{width:100px;height:82px}.footer-copy>span{color:#385466}.footer-copy small{color:#667d89}}
+@media(min-width:761px){.brand-mark img{mix-blend-mode:normal}}
+
+/* Consultation form: calmer hierarchy, clearer fields, less vertical scanning. */
+.consultation-panel{max-width:680px;padding:clamp(28px,3.2vw,42px);border:1px solid rgba(255,255,255,.72);border-top:3px solid #0a9294;border-radius:18px;background:linear-gradient(145deg,#f8fcfc 0%,#edf5f6 56%,#e5f0f2 100%);box-shadow:0 26px 72px rgba(0,13,25,.3),inset 0 1px 0 rgba(255,255,255,.8)}
+.form-kicker{display:inline-flex;align-items:center;gap:8px;padding:7px 11px;border:1px solid rgba(11,143,155,.16);border-radius:999px;background:#e5f2f3;color:#087b83;font-size:9px;letter-spacing:.13em}
+.form-heading h3{font-size:clamp(25px,2.4vw,32px);line-height:1.15;letter-spacing:-.05em;margin:16px 0 9px;color:#102638}
+.form-heading p{max-width:410px;color:#627783;font-size:13px;line-height:1.7}
+.consultation-panel form{display:grid;grid-template-columns:1fr 1fr;column-gap:16px;row-gap:0;margin-top:21px}
+.form-field{min-width:0;margin-top:15px}
+.form-field label{font-size:12px;letter-spacing:.015em;color:#20394a;margin-bottom:7px}
+.form-field input,.form-field textarea,.form-field select{min-height:50px;padding:12px 14px;border-radius:8px;border-color:#d1e0e4;background:rgba(255,255,255,.86);box-shadow:0 1px 2px rgba(16,38,56,.025);font-size:14px;transition:border-color .18s,box-shadow .18s,background .18s,transform .18s}
+.form-field input:hover,.form-field textarea:hover,.form-field select:hover{border-color:#9ebfc7;background:#fff}
+.form-field input:focus,.form-field textarea:focus,.form-field select:focus{border-color:#0b8f9b;box-shadow:0 0 0 3px rgba(11,143,155,.13);background:#fff;transform:translateY(-1px)}
+.form-field textarea{min-height:96px;line-height:1.6}
+.field-full,.form-privacy,.form-submit,.form-status{grid-column:1/-1}
+.form-privacy{position:relative;margin:18px 0 14px;padding:11px 13px 11px 38px;border:1px solid rgba(11,143,155,.12);border-radius:8px;background:rgba(225,239,241,.68);color:#637680;font-size:11px;line-height:1.6}
+.form-privacy:before{content:"i";position:absolute;left:13px;top:12px;display:grid;place-items:center;width:16px;height:16px;border:1px solid #4b9299;border-radius:50%;color:#287b83;font:bold 10px var(--display)}
+.form-submit{margin-top:1px;min-height:58px;padding-inline:19px;font-size:14px;letter-spacing:.005em}
+.form-submit span{margin-left:auto}
+.form-status{font-size:12px}
+@media(max-width:1000px){.consultation-panel{padding:28px}.consultation-panel form{column-gap:13px}}
+@media(max-width:760px){.consultation-panel{padding:25px 20px 22px;border-radius:15px}.form-heading h3{font-size:25px;margin-top:14px}.consultation-panel form{grid-template-columns:1fr;column-gap:0;margin-top:17px}.form-field{margin-top:14px}.field-full,.form-privacy,.form-submit,.form-status{grid-column:1}.form-field input,.form-field textarea,.form-field select{font-size:16px}.form-privacy{margin-top:16px;font-size:11px}.form-submit{margin-top:2px;font-size:13px}}
+@media(prefers-reduced-motion:reduce){.form-field input,.form-field textarea,.form-field select{transition:none}}
