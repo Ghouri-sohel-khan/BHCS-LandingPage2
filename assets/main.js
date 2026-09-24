@@ -24,15 +24,7 @@ consultationForm?.addEventListener('submit', (event) => {
   if (!consultationForm.reportValidity()) return;
 
   const data = new FormData(consultationForm);
-  const isArabic = document.documentElement.lang === 'ar';
-  const message = isArabic ? [
-    'مرحباً BHCS، أود طلب إرشاد للاستشارة.',
-    `الاسم: ${data.get('name')}`,
-    `الدولة: ${data.get('country')}`,
-    `رقم الهاتف أو واتساب: ${data.get('phone')}`,
-    `التخصص أو العلاج المطلوب: ${data.get('treatment')}`,
-    `طريقة التواصل المفضلة: ${data.get('contactMethod')}`
-  ].join('\n') : [
+  const message = [
     'Hello BHCS, I would like to request consultation guidance.',
     `Name: ${data.get('name')}`,
     `Country: ${data.get('country')}`,
@@ -41,7 +33,7 @@ consultationForm?.addEventListener('submit', (event) => {
     `Preferred contact method: ${data.get('contactMethod')}`
   ].join('\n');
   const whatsappUrl = `https://wa.me/919989777863?text=${encodeURIComponent(message)}`;
-  if (status) status.textContent = isArabic ? 'سيفتح واتساب برسالتك الجاهزة. راجع التفاصيل ثم اضغط إرسال هناك.' : 'WhatsApp will open with your draft. Review the details and tap Send there.';
+  if (status) status.textContent = 'WhatsApp will open with your draft. Review the details and tap Send there.';
   const opened = window.open(whatsappUrl, '_blank');
   if (opened) opened.opener = null;
   else window.location.assign(whatsappUrl);

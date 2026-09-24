@@ -1,6 +1,6 @@
 # BHCS Landing Page — GitHub + Vercel
 
-This is a static HTML/CSS/JavaScript website. The published website files are in `dist/`.
+This is a static HTML/CSS/JavaScript website. The published website files are in `dist/`. The Arabic right-to-left version is available at `/ar/`.
 
 ## Publish with GitHub and Vercel
 
