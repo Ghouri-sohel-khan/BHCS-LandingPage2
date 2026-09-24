@@ -1,0 +1,16 @@
+:root{--paper:#e6eff2;--white:#f1f7f8;--ink:#102638;--muted:#526b7b;--coral:#e66c57;--gold:#d8b27a}
+body{background:#e6eff2}
+.site-header{background:linear-gradient(105deg,#e2edf0 0%,#edf4f5 56%,#e1ecef 100%);border-bottom-color:rgba(14,49,68,.14)}
+.brand-mark{box-shadow:0 5px 18px rgba(8,41,59,.08)}
+.intro{background:linear-gradient(118deg,#edf5f6 0%,#dfeaed 56%,#eaf2f4 100%)}
+.support-section{background:#e9f2f4}
+.specialties-section{background:linear-gradient(135deg,#dce9ed 0%,#e8f1f3 48%,#dfeaed 100%)}
+.stories-section{background:linear-gradient(118deg,#e7f0f2 0%,#dce9ed 100%)}
+.consultation-panel{background:linear-gradient(145deg,#f1f7f8 0%,#e5eff2 100%);border:1px solid rgba(48,98,116,.18);box-shadow:0 24px 70px rgba(1,22,38,.26)}
+.form-field input,.form-field textarea,.form-field select{background:#f5fafb;border-color:#c9d9de}
+.form-field input:focus,.form-field textarea:focus,.form-field select:focus{background:#fff}
+.journey-section{background:linear-gradient(120deg,#071a2b 0%,#0b2a40 58%,#092239 100%)}
+.doctor-section{background:linear-gradient(112deg,#081c2e 0%,#102d43 52%,#081c2e 100%)}
+.contact-section:before{background:radial-gradient(ellipse at 78% 48%,rgba(27,88,113,.56),transparent 47%),linear-gradient(110deg,#071a2b,#0a2840)}
+.primary-nav.is-open{background:linear-gradient(105deg,#e2edf0,#edf4f5)}
+@media(prefers-reduced-motion:reduce){.site-header,.consultation-panel,.form-field input,.form-field textarea,.form-field select{transition:none}}

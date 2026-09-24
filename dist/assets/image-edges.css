@@ -1,0 +1,5 @@
+.support-visual,.doctor-photo,.doctor-clinic,.welcome-video,.stories-gallery figure{border-radius:16px;overflow:hidden;box-shadow:0 16px 38px rgba(8,34,51,.11)}
+.support-visual{isolation:isolate}
+.doctor-photo,.doctor-clinic,.welcome-video,.stories-gallery figure{background-color:#dce9ed}
+.support-image,.doctor-photo img,.doctor-clinic img,.welcome-video video,.stories-gallery img{border-radius:inherit}
+@media(max-width:760px){.support-visual,.doctor-photo,.doctor-clinic,.welcome-video,.stories-gallery figure{border-radius:13px}}
