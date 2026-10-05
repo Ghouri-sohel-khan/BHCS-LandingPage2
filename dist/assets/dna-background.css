@@ -1,0 +1,16 @@
+/* Digital DNA backdrop for the BHCS approach section */
+.intro{isolation:isolate;background:#071a2b;color:#fff}
+.intro:before,.intro:after{content:'';position:absolute;inset:0;pointer-events:none}
+.intro:before{z-index:0;background:url('/assets/digital-dna-background.png') center/cover no-repeat;opacity:.96;transform:scale(1.04);animation:dnaDrift 18s ease-in-out infinite alternate}
+.intro:after{z-index:0;background:linear-gradient(90deg,rgba(4,18,34,.93) 0%,rgba(5,22,40,.76) 36%,rgba(5,22,40,.27) 72%,rgba(5,22,40,.1) 100%),linear-gradient(0deg,rgba(4,18,34,.35),transparent 35%,rgba(4,18,34,.18))}
+.intro>*{position:relative;z-index:1}
+.intro .intro-label,.intro .eyebrow{color:rgba(255,255,255,.78)}
+.intro h2{color:#fff}
+.intro h2 em{color:#ff9b72}
+.intro-bottom p{color:rgba(233,243,249,.84)}
+.intro .dark-link{color:#fff}
+.intro .dark-link span{color:#6de5ff}
+.intro-stamp{color:rgba(255,255,255,.35);border-color:rgba(255,255,255,.2);z-index:1}
+.intro-stamp:before,.intro-stamp:after{border-color:rgba(255,255,255,.16)}
+@keyframes dnaDrift{0%{transform:scale(1.04) translate3d(0,0,0)}100%{transform:scale(1.1) translate3d(-1.2%,-.8%,0)}}
+@media(prefers-reduced-motion:reduce){.intro:before{animation:none;transform:none}}
