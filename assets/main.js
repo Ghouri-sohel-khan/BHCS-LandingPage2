@@ -32,7 +32,7 @@ consultationForm?.addEventListener('submit', (event) => {
     `Treatment requirement: ${data.get('treatment')}`,
     `Preferred contact method: ${data.get('contactMethod')}`
   ].join('\n');
-  const whatsappUrl = `https://wa.me/919989777863?text=${encodeURIComponent(message)}`;
+  const whatsappUrl = `https://wa.me/919030696046?text=${encodeURIComponent(message)}`;
   if (status) status.textContent = 'WhatsApp will open with your draft. Review the details and tap Send there.';
   const opened = window.open(whatsappUrl, '_blank');
   if (opened) opened.opener = null;
